@@ -1,0 +1,7 @@
+log/
+install/
+build/
+.vscode/c_cpp_properties.json
+.vscode/settings.json
+__pycache__/
+.vscode
