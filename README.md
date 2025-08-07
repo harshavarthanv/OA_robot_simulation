@@ -40,11 +40,11 @@ sudo apt install ros-humble-moveit ros-humble-joint-state-publisher-gui
    ```
 
 ### TEST PLANNING
-Once launched the rviz2 can be seen with the panda arm and a cuboid obsctacle (green color)<br>
-Under motion planning in the planning tab, choose the Start_state as "<current>" and the goal_state as "init_pose" ( This makes the arm move to the init pose)<br>
-Click "plan & execute" to see how it plans and executes the planned path.<br>
-Then to test the obstacle avoidance by the Moveit2 builtin default solver (RRTCONNECT), change the start_state to "init_pose" and goal_state as "target_pose1"<br>
-Click "plan & execute" and observe how it avoid the obstacle and moves to the goal_state.
+-Once launched the rviz2 can be seen with the panda arm and a cuboid obsctacle (green color)<br>
+-Under motion planning in the planning tab, choose the Start_state as "<current>" and the goal_state as "init_pose" ( This makes the arm move to the init pose)<br>
+-Click "plan & execute" to see how it plans and executes the planned path.<br>
+-Then to test the obstacle avoidance by the Moveit2 builtin default solver (RRTCONNECT), change the start_state to "init_pose" and goal_state as "target_pose1"<br>
+-Click "plan & execute" and observe how it avoid the obstacle and moves to the goal_state.
 
 
 ## TIPS:
