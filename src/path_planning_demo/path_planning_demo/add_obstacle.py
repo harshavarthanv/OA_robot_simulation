@@ -26,14 +26,14 @@ class ObstaclePublisher(Node):
         box = SolidPrimitive()
         box.type = SolidPrimitive.BOX
         box_height = 0.2
-        box_width = 0.2
+        box_width = 0.7
         box_length = 0.2    
         box.dimensions = [box_length, box_width, box_height]
 
         pose = Pose()
         pose.orientation.w = 1.0
         pose.position.x = 0.5
-        pose.position.y = 0.0
+        pose.position.y = 0.1
         pose.position.z = box_height / 2.0 #to make sure the box is above the ground
 
         collision_object.primitives = [box]
