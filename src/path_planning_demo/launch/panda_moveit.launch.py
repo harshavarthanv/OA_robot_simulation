@@ -13,11 +13,12 @@ def generate_launch_description():
     return LaunchDescription([
         # Joint State Publisher (fake)
         Node(
-            package='joint_state_publisher',
-            executable='joint_state_publisher',
-            name='joint_state_publisher',
+            package='joint_state_publisher_gui',
+            executable='joint_state_publisher_gui',
+            name='joint_state_publisher_gui',
             output='screen',
         ),
+
 
         # Robot State Publisher (publishes TFs from URDF)
         Node(
@@ -36,4 +37,5 @@ def generate_launch_description():
             name='rviz2',
             output='screen'
         )
+
     ])
