@@ -1,16 +1,39 @@
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription
-from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 import os
 
 def generate_launch_description():
-    panda_config_path = get_package_share_directory('moveit_resources_panda_moveit_config')
+    pkg_path = get_package_share_directory('path_planning_demo')
+    urdf_path = os.path.join(pkg_path, 'urdf', 'panda.urdf')
+
+    with open(urdf_path, 'r') as infp:
+        robot_description_content = infp.read()
 
     return LaunchDescription([
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(
-                os.path.join(panda_config_path, 'launch', 'demo.launch.py')
-            )
+        # Joint State Publisher (fake)
+        Node(
+            package='joint_state_publisher',
+            executable='joint_state_publisher',
+            name='joint_state_publisher',
+            output='screen',
+        ),
+
+        # Robot State Publisher (publishes TFs from URDF)
+        Node(
+            package='robot_state_publisher',
+            executable='robot_state_publisher',
+            output='screen',
+            parameters=[{
+                'robot_description': robot_description_content
+            }]
+        ),
+
+        # RViz2
+        Node(
+            package='rviz2',
+            executable='rviz2',
+            name='rviz2',
+            output='screen'
         )
     ])
