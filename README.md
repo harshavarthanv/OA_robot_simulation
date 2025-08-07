@@ -1,14 +1,14 @@
 # Robot arm path planning with obstacle avoidance (ROS2 + MOVEIT2 + RVIZ2)
 
 ## PROJECT STRUCTURE
-├── moveit2_panda_config/ # MoveIt 2 config package for Panda arm 
-│ ├── config/ # Includes planning config, kinematics, controllers, etc. 
-│ └── launch/ # Launch file for MoveIt and RViz2 
-│
-├── path_planning_demo/ # Custom demo package 
-│ ├── launch/ 
-│ │ └── panda_with_obstacle.launch.py #launches the full demo 
-│ └── path_planning_demo/ #scripts folder for python files
+├── moveit2_panda_config/ # MoveIt 2 config package for Panda arm <br>
+│ ├── config/ # Includes planning config, kinematics, controllers, etc. <br>
+│ └── launch/ # Launch file for MoveIt and RViz2 <br>
+│<br>
+├── path_planning_demo/ # Custom demo package <br>
+│ ├── launch/ <br>
+│ │ └── panda_with_obstacle.launch.py #launches the full demo <br>
+│ └── path_planning_demo/ #scripts folder for python files<br>
 │   └── add_obstacle_node.cpp #Adds a static obstacle to the planning scene 
 
 ## HOW TO RUN
@@ -40,10 +40,10 @@ sudo apt install ros-humble-moveit ros-humble-joint-state-publisher-gui
    ```
 
 ### TEST PLANNING
-Once launched the rviz2 can be seen with the panda arm and a cuboid obsctacle (green color)
-Under motion planning in the planning tab, choose the Start_state as "<current>" and the goal_state as "init_pose" ( This makes the arm move to the init pose)
-Click "plan & execute" to see how it plans and executes the planned path.
-Then to test the obstacle avoidance by the Moveit2 builtin default solver (RRTCONNECT), change the start_state to "init_pose" and goal_state as "target_pose1"
+Once launched the rviz2 can be seen with the panda arm and a cuboid obsctacle (green color)<br>
+Under motion planning in the planning tab, choose the Start_state as "<current>" and the goal_state as "init_pose" ( This makes the arm move to the init pose)<br>
+Click "plan & execute" to see how it plans and executes the planned path.<br>
+Then to test the obstacle avoidance by the Moveit2 builtin default solver (RRTCONNECT), change the start_state to "init_pose" and goal_state as "target_pose1"<br>
 Click "plan & execute" and observe how it avoid the obstacle and moves to the goal_state.
 
 
